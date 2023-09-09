@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Pet {
+  id: Int!
+  name: String!
+  createdAt: DateTime
+  type: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getPet(id: Int!): Pet!
+  pets: [Pet!]!
+  deletePet(id: Int!): [Pet!]!
+}
+
+type Mutation {
+  createPet(createPetInput: CreatePetInput!): Pet!
+  updatePet(id: Int!, updatePetInput: CreatePetInput!): Pet!
+}
+
+input CreatePetInput {
+  name: String!
+  createdAt: DateTime
+  type: String
+}
